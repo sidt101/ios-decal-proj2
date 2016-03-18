@@ -26,10 +26,19 @@ class GameViewController: UIViewController {
     var numberOfIncorrectGuesses: Int = 0
     var allGuesses = Set<Character>()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    @IBAction func resetGame(sender: AnyObject) {
+        globalPhrase = ""
+        unfilledBlanks = ""
+        incorrectGuessesString = ""
+        numberOfIncorrectGuesses = 0
+        allGuesses = Set<Character>()
+        guessButton.enabled = true
+        letterGuessed.enabled = true
+        incorrectGuesses.text = ""
+        
+        initializeGame()
+    }
+    func initializeGame() {
         let hangmanPhrases = HangmanPhrases()
         var phraseToGuess = hangmanPhrases.getRandomPhrase()
         globalPhrase = phraseToGuess
@@ -46,6 +55,12 @@ class GameViewController: UIViewController {
         }
         wordToBeGuessed.text = unfilledBlanks
         hangmanStateImage.image = UIImage(named: "hangman1.gif")
+    }
+    
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        initializeGame()
         playGame()
         
         
@@ -113,6 +128,7 @@ class GameViewController: UIViewController {
                     alert.addAction(UIAlertAction(title: "I had soooo much fun!", style: UIAlertActionStyle.Default, handler: nil))
                     self.presentViewController(alert, animated: true, completion: nil)
                     guessButton.enabled = false
+                    letterGuessed.enabled = false
                     
                 }
             }
@@ -140,11 +156,12 @@ class GameViewController: UIViewController {
         numberOfIncorrectGuesses += 1
         hangmanStateImage.image = UIImage(named: "hangman" + String(numberOfIncorrectGuesses + 1) + ".gif")
         incorrectGuesses.text = incorrectGuesses.text! + " " + String(guessedCharacter)
-        if numberOfIncorrectGuesses == 7 {
+        if numberOfIncorrectGuesses == 6 {
             let alert = UIAlertController(title: "You Lost :(", message: "You have run out of moves", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Gotta practice my words.", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
             guessButton.enabled = false
+            letterGuessed.enabled = false
         }
         
     }

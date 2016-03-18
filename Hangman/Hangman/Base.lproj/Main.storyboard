@@ -18,19 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nwo-9s-O6z">
-                                <rect key="frame" x="146" y="78" width="308" height="58"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Play Game!">
-                                        <attributes>
-                                            <color key="NSColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="29" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="clipping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RKK-6n-SGy">
                                 <rect key="frame" x="250" y="169" width="100" height="100"/>
                                 <constraints>
@@ -50,22 +37,49 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWu-2j-DKO">
                                 <rect key="frame" x="268" y="435" width="65" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Guess!"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vCV-mu-wmP">
+                                <rect key="frame" x="250" y="473" width="100" height="38"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Start Over"/>
+                                <connections>
+                                    <action selector="resetGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I8T-oF-df4"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nwo-9s-O6z">
+                                <rect key="frame" x="44" y="77" width="490" height="58"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Play Game!">
+                                        <attributes>
+                                            <color key="NSColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="29" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="clipping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="vCV-mu-wmP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="000-rS-jWC"/>
                             <constraint firstItem="wWu-2j-DKO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3IY-Ji-P8H"/>
                             <constraint firstItem="Nwo-9s-O6z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3lU-Jl-2qs"/>
                             <constraint firstItem="0C5-ks-xA1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="40O-Vz-WRa"/>
                             <constraint firstItem="QqN-1l-CME" firstAttribute="top" secondItem="RKK-6n-SGy" secondAttribute="bottom" constant="60" id="5Gy-eu-146"/>
                             <constraint firstItem="QqN-1l-CME" firstAttribute="top" secondItem="RKK-6n-SGy" secondAttribute="bottom" constant="100" id="680-pN-OAx"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="RKK-6n-SGy" secondAttribute="bottom" constant="331" id="87c-dL-7pt"/>
-                            <constraint firstItem="Nwo-9s-O6z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="52" id="EJl-ul-9iA"/>
+                            <constraint firstItem="Nwo-9s-O6z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="EJl-ul-9iA"/>
                             <constraint firstItem="QqN-1l-CME" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="160" id="Efa-Pi-0kK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vCV-mu-wmP" secondAttribute="trailing" constant="125" id="Jj0-fM-ciF"/>
+                            <constraint firstItem="vCV-mu-wmP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="125" id="LiB-Bg-Zh6"/>
                             <constraint firstItem="RKK-6n-SGy" firstAttribute="top" secondItem="Nwo-9s-O6z" secondAttribute="bottom" constant="33" id="Qcd-DM-N6e"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0C5-ks-xA1" secondAttribute="trailing" constant="50" id="WLH-6j-nlN"/>
                             <constraint firstItem="wWu-2j-DKO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="140" id="Wol-BS-Cp8"/>
+                            <constraint firstItem="vCV-mu-wmP" firstAttribute="top" secondItem="wWu-2j-DKO" secondAttribute="bottom" constant="50" id="ZPm-eW-Ndh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RKK-6n-SGy" secondAttribute="trailing" constant="150" id="cbO-7l-HMl"/>
                             <constraint firstItem="QqN-1l-CME" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="180" id="cil-kg-NL1"/>
                             <constraint firstItem="Nwo-9s-O6z" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="64" id="d4g-7X-BZx"/>
@@ -75,7 +89,7 @@
                             <constraint firstItem="0C5-ks-xA1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gqQ-Jb-JJe"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QqN-1l-CME" secondAttribute="bottom" constant="251" id="i7a-RI-Q4r"/>
                             <constraint firstItem="QqN-1l-CME" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jni-yw-55u"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Nwo-9s-O6z" secondAttribute="trailing" constant="52" id="jqC-lF-OIS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Nwo-9s-O6z" secondAttribute="trailing" constant="20" id="jqC-lF-OIS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QqN-1l-CME" secondAttribute="trailing" constant="180" id="luQ-aW-Gey"/>
                             <constraint firstItem="0C5-ks-xA1" firstAttribute="top" secondItem="RKK-6n-SGy" secondAttribute="bottom" constant="30" id="oTh-N9-ZPm"/>
                             <constraint firstItem="RKK-6n-SGy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="150" id="sIy-ey-Pob"/>
@@ -95,6 +109,8 @@
                             </mask>
                         </variation>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="guessButton" destination="wWu-2j-DKO" id="bBh-Vn-KKc"/>
                         <outlet property="hangmanStateImage" destination="RKK-6n-SGy" id="GVB-m8-DR5"/>
@@ -105,7 +121,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="616" y="344"/>
+            <point key="canvasLocation" x="701" y="461"/>
         </scene>
         <!--Start Screen View Controller-->
         <scene sceneID="126-Y5-crb">
